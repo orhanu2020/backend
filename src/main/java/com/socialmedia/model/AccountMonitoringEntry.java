@@ -1,6 +1,7 @@
 package com.socialmedia.model;
 
 import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -12,6 +13,7 @@ import java.time.LocalDate;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class AccountMonitoringEntry {
     /** Keyword: account name when keywordType=account, or word in tweet when keywordType=tweet. */
     @JsonAlias("accountName")
