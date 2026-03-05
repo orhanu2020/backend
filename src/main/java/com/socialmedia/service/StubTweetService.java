@@ -12,7 +12,7 @@ import java.util.List;
 /**
  * No-op TweetService when database is not configured. Persistence is skipped.
  */
-@Service("tweetService")
+@Service
 @ConditionalOnMissingBean(name = "tweetService")
 public class StubTweetService extends TweetService {
 
