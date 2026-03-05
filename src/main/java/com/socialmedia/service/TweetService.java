@@ -3,15 +3,18 @@ package com.socialmedia.service;
 import com.socialmedia.entity.Tweet;
 import com.socialmedia.entity.User;
 import com.socialmedia.repository.TweetRepository;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.time.Instant;
 import java.util.List;
 import java.util.stream.Collectors;
 
 @Service
+@ConditionalOnBean(DataSource.class)
 public class TweetService {
 
     private final TweetRepository tweetRepository;

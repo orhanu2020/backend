@@ -2,13 +2,16 @@ package com.socialmedia.service;
 
 import com.socialmedia.entity.User;
 import com.socialmedia.repository.UserRepository;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Propagation;
 import org.springframework.transaction.annotation.Transactional;
 
+import javax.sql.DataSource;
 import java.util.Optional;
 
 @Service
+@ConditionalOnBean(DataSource.class)
 public class UserService {
 
     private final UserRepository userRepository;
