@@ -9,8 +9,8 @@ import java.util.Optional;
 /**
  * No-op UserService when database is not configured. Persistence is skipped.
  */
-@Service
-@ConditionalOnMissingBean(UserService.class)
+@Service("userService")
+@ConditionalOnMissingBean(name = "userService")
 public class StubUserService extends UserService {
 
     public StubUserService() {
