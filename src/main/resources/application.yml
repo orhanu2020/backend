@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: social-media-service
+  jackson:
+    time-zone: UTC
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/postgres?currentSchema=socialmedia}
+    username: ${DATABASE_USERNAME:postgres}
+    password: ${DATABASE_PASSWORD:postgres}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: ${JPA_DDL_AUTO:update}
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        use_sql_comments: true
+    open-in-view: false
+
+twitter:
+  api:
+    base-url: https://api.twitterapi.io
+    key: ${TWITTER_API_KEY:}
+
+logging:
+  level:
+    root: INFO
+    com.socialmedia: DEBUG
+
+springdoc:
+  api-docs:
+    path: /v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+    enabled: true
