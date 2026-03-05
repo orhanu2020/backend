@@ -15,7 +15,7 @@ public class SocialMediaApplication {
     private static final String EXCLUDE_DB_AUTOCONFIG = String.join(",",
             "org.springframework.boot.jdbc.autoconfigure.DataSourceAutoConfiguration",
             "org.springframework.boot.jdbc.autoconfigure.DataSourceTransactionManagerAutoConfiguration",
-            "org.springframework.boot.hibernate.autoconfigure.HibernateJpaConfiguration",
+            "org.springframework.boot.autoconfigure.orm.jpa.HibernateJpaAutoConfiguration",
             "org.springframework.boot.autoconfigure.data.jpa.JpaRepositoriesAutoConfiguration");
 
     public static void main(String[] args) {
