@@ -4,13 +4,14 @@ import com.socialmedia.entity.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.util.Optional;
 
 /**
  * No-op UserService when database is not configured. Persistence is skipped.
  */
 @Service
-@ConditionalOnMissingBean(name = "userService")
+@ConditionalOnMissingBean(DataSource.class)
 public class StubUserService extends UserService {
 
     public StubUserService() {

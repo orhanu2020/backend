@@ -5,6 +5,7 @@ import com.socialmedia.entity.User;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.stereotype.Service;
 
+import javax.sql.DataSource;
 import java.time.Instant;
 import java.util.Collections;
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * No-op TweetService when database is not configured. Persistence is skipped.
  */
 @Service
-@ConditionalOnMissingBean(name = "tweetService")
+@ConditionalOnMissingBean(DataSource.class)
 public class StubTweetService extends TweetService {
 
     public StubTweetService() {
