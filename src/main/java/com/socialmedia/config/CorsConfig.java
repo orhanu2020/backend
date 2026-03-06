@@ -14,13 +14,11 @@ public class CorsConfig {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();
         
-        // Allow credentials
+        // Allow credentials (cookies, auth headers)
         config.setAllowCredentials(true);
         
-        // Allow all localhost origins for development (you can restrict this in production)
-        // This covers localhost with any port
-        config.addAllowedOriginPattern("http://localhost:*");
-        config.addAllowedOriginPattern("http://127.0.0.1:*");
+        // Allow all origins (use specific origins in production for security)
+        config.addAllowedOriginPattern("*");
         
         // Allow all headers
         config.addAllowedHeader("*");
